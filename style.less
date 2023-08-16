@@ -1,0 +1,168 @@
+@import "normalize.css";
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Fraunces:opsz,wght@9..144,700&family=Montserrat:wght@300;500;700&family=Red+Hat+Display:wght@500;700;900&display=swap');
+
+//https://gist.github.com/qqqzhch/28957b1c4b81c7f9d1ebc8b44ec485bb
+
+
+@Primary-color-Paleblue: hsl(225, 100%, 94%);
+
+
+@Primary-color-Bright:hsl(245, 75%, 52%);
+
+@Primary-color-Verypale-blue: hsl(225, 100%, 98%);
+@Primary-color-Desaturated-blue:hsl(224, 23%, 55%);
+@Primary-color-Dark-blue: hsl(223, 47%, 23%);
+
+@font-size: 16;         // Your base font-size in pixels
+@em: @font-size*1em;    // Shorthand for outputting ems, e.g. "12/@em"
+@rem: @font-size*1rem;  // Shorthand for outputting ems, e.g. "12/@rem"
+
+@sm:"max-width: 400px";
+@md:"max-width:800px";
+@screen-md-min:"600px";
+@screen-xs-max:'600px';
+@md-and-up: ~"only screen and (min-width: @{screen-md-min})";
+@xs-only: ~"only screen and (max-width: @{screen-xs-max})";
+@mobile: @xs-only;
+@desktop: @md-and-up;
+
+body{
+   
+     background-repeat: no-repeat;
+    //  background-position: center center;
+     background-attachment: fixed;
+     background-size:contain;
+     min-width: 100vw;
+     min-height: 100vh;
+     background-color:@Primary-color-Paleblue ;
+     display: flex;
+     font-family: 'Red Hat Display', sans-serif;
+}
+
+@media  @desktop {
+  
+        body {
+            background-image: url('./images/pattern-background-mobile.svg');
+        }
+    
+  
+     
+       
+     
+  
+}
+
+@media @mobile{
+    body{
+        background-image: url('./images/pattern-background-desktop.svg'); 
+  }
+
+}
+
+main{
+    
+   
+    background: @Primary-color-Verypale-blue;
+    margin: auto;
+    border-radius: 15./@rem;
+    display: flex;
+    flex-direction: column;
+}
+
+
+@media @desktop{
+    main{
+        width: 430./@rem;
+        min-height: 660./@rem;
+    }
+}
+
+@media @mobile{
+    main{
+        width: 85vw;
+        min-height: 90vh;
+    }
+}
+.hero{
+    width: 100%;
+    
+    border-top-left-radius:  15./@rem;
+    border-top-right-radius:  15./@rem;
+
+}
+h1{
+    text-align: center;
+}
+p{
+    color: @Primary-color-Desaturated-blue;
+    text-align: center;
+    line-height: 30./@rem;
+    font-size: 20./@rem;
+    padding-left: 20./@rem;
+    padding-right: 20./@rem;
+}
+.prise{
+    padding: 20./@rem;
+    margin: 20./@rem;
+    background-color:desaturate(@Primary-color-Paleblue,90%);
+    border-radius: 15./@rem;
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    
+    &>*{
+        margin-left: 6./@rem;
+        margin-right: 6./@rem;
+    }
+    .num{
+        display: flex;
+        flex-direction: column;
+        &>*{
+            margin-top: 4./@rem;
+            margin-bottom: 4./@rem;
+        }
+        span{
+            color:@Primary-color-Desaturated-blue ;
+        }
+         
+    }
+    .change{
+       color: @Primary-color-Bright;
+       text-decoration:underline;
+    }
+   
+   
+
+}
+
+.btn{
+    background-color:@Primary-color-Bright ;
+    color: white;
+    padding-top: 20./@rem;
+    padding-bottom: 20./@rem;
+    font-weight: 600;
+    font-size:larger;
+    border-radius: 20./@rem;
+    margin-left: 20./@rem;
+    margin-right: 20./@rem;
+    margin-bottom: 20./@rem;
+    outline: none;
+    border: none;
+    box-shadow:3px 10px 40px #A298E3;
+}
+.Cancel{
+    padding-top: 20./@rem;
+    padding-bottom: 20./@rem;
+    font-weight: 600;
+    font-size:larger;
+    border-radius: 20./@rem;
+    margin-left: 20./@rem;
+    margin-right: 20./@rem;
+    margin-bottom: 20./@rem;
+    outline: none;
+    border: none;
+    text-align: center;
+    color:@Primary-color-Desaturated-blue ;
+
+}
